@@ -1,0 +1,75 @@
+.focus__inner {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 48px;
+  align-items: center;
+  max-width: 860px;
+  margin: 0 auto;
+}
+/* Pulse visual */
+.focus__pulse {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.focus__pulse-ring {
+  position: absolute;
+  inset: -16px;
+  border-radius: 50%;
+  border: 2px solid var(--color-accent-mid);
+  animation: pulse-ring 2.5s ease-in-out infinite;
+}
+@keyframes pulse-ring {
+  0%, 100% { transform: scale(1); opacity: 0.4; }
+  50% { transform: scale(1.2); opacity: 0; }
+}
+.focus__pulse-core {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--color-accent-dim);
+  border: 2px solid var(--color-accent-mid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.focus__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.focus-card {
+  padding: 20px 24px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--fc-border);
+  border-left: 3px solid var(--fc-color);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  transition: all var(--transition-base);
+}
+.focus-card:hover {
+  background: var(--color-bg-card-hover);
+  transform: translateX(4px);
+}
+.focus-card__label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fc-color);
+  margin-bottom: 6px;
+}
+.focus-card__text {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.65;
+}
+
+@media (max-width: 640px) {
+  .focus__inner { grid-template-columns: 1fr; }
+  .focus__pulse { display: none; }
+}

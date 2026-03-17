@@ -1,0 +1,41 @@
+.tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  border-radius: 6px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.tag--sm {
+  font-size: 0.7rem;
+  padding: 3px 8px;
+}
+.tag--md {
+  font-size: 0.8rem;
+  padding: 5px 10px;
+}
+
+.tag--default {
+  background: rgba(255,255,255,0.06);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+}
+.tag--accent {
+  background: var(--color-accent-dim);
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent-mid);
+}
+.tag--gold {
+  background: var(--color-gold-dim);
+  color: var(--color-gold);
+  border: 1px solid rgba(240,180,41,0.2);
+}
+.tag--emerald {
+  background: var(--color-emerald-dim);
+  color: var(--color-emerald);
+  border: 1px solid rgba(16,185,129,0.2);
+}
+.tag--purple {
+  background: var(--color-purple-dim);
+  color: var(--color-purple);
+  border: 1px solid rgba(139,92,246,0.2);
+}

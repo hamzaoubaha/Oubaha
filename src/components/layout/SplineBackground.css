@@ -1,0 +1,20 @@
+.spline-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: auto;
+  background-color: var(--color-bg);
+  overflow: hidden; /* Hide the overflowed logo */
+}
+
+.spline-bg spline-viewer {
+  width: 100%;
+  height: calc(100% + 200px); /* Oversize to hide watermark */
+  position: absolute;
+  top: -100px; /* Offset to keep the original center aligned with the screen */
+  left: 0;
+}
+
