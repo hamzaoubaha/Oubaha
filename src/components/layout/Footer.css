@@ -148,6 +148,18 @@
   .footer__top {
     grid-template-columns: 1fr;
     gap: 28px;
+    text-align: center;
+  }
+  .footer__logo,
+  .footer__social {
+    justify-content: center;
+  }
+  .footer__email,
+  .footer__cv-link {
+    margin: 0 auto;
+  }
+  .footer__tagline {
+    margin: 0 auto 20px;
   }
   .footer__bottom {
     flex-direction: column;

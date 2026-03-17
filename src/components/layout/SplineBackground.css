@@ -4,10 +4,11 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 0; /* Sits above background color but below everything else */
+  z-index: -1; /* Sits above background color but below everything else */
   pointer-events: none; /* NEVER block clicks/scrolls */
   background-color: var(--color-bg);
   overflow: hidden;
+  opacity: 0.4;
 }
 
 .spline-bg spline-viewer {
