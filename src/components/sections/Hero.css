@@ -16,17 +16,19 @@
   pointer-events: none;
   filter: blur(80px);
 }
+
 .hero__orb--1 {
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(37,99,235,0.05) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.05) 0%, transparent 70%);
   top: -100px;
   right: -100px;
 }
+
 .hero__orb--2 {
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(124,58,237,0.04) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.04) 0%, transparent 70%);
   bottom: 0;
   left: -80px;
 }
@@ -56,8 +58,8 @@
   align-items: center;
   gap: 8px;
   padding: 8px 14px;
-  background: rgba(16,185,129,0.1);
-  border: 1px solid rgba(16,185,129,0.25);
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.25);
   border-radius: 100px;
   font-size: 0.78rem;
   font-weight: 600;
@@ -65,13 +67,22 @@
   margin-bottom: 24px;
   width: fit-content;
 }
+
 .hero__badge-dot {
   fill: var(--color-emerald);
   animation: pulse-dot 2s infinite;
 }
+
 @keyframes pulse-dot {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
 }
 
 /* Name */
@@ -83,6 +94,7 @@
   margin-bottom: 24px;
   color: var(--color-text-primary);
 }
+
 .hero__name-role {
   font-size: clamp(1.6rem, 3.5vw, 2.5rem);
   font-weight: 600;
@@ -127,46 +139,99 @@
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
   position: relative;
 }
+
 .code-card__header {
   display: flex;
   align-items: center;
   gap: 8px;
   padding: 16px 20px;
   border-bottom: 1px solid var(--color-border);
-  background: rgba(0,0,0,0.02);
+  background: rgba(0, 0, 0, 0.02);
   border-radius: var(--radius-xl) var(--radius-xl) 0 0;
 }
+
 .code-card__dot {
   width: 12px;
   height: 12px;
   border-radius: 50%;
 }
-.code-card__dot--red { background: #ff5f57; }
-.code-card__dot--yellow { background: #febc2e; }
-.code-card__dot--green { background: #28c840; }
+
+.code-card__dot--red {
+  background: #ff5f57;
+}
+
+.code-card__dot--yellow {
+  background: #febc2e;
+}
+
+.code-card__dot--green {
+  background: #28c840;
+}
+
 .code-card__filename {
   margin-left: 8px;
   font-size: 0.78rem;
   color: var(--color-text-muted);
 }
+
 .code-card__body {
   padding: 24px 28px;
   font-size: 0.875rem;
   line-height: 2;
 }
 
-.code-line { display: block; }
-.code-line--indent { padding-left: 20px; }
-.code-empty { height: 0.5rem; }
-.code-keyword { color: #d73a49; } /* Red */
-.code-var { color: #005cc5; } /* Blue */
-.code-op { color: #24292e; }
-.code-brace { color: #24292e; }
-.code-key { color: #6f42c1; } /* Purple */
-.code-str { color: #032f62; font-weight: 500; } /* Dark Blue */
-.code-bool { color: #d73a49; } 
-.code-fn { color: #6f42c1; }
-.code-method { color: #005cc5; }
+.code-line {
+  display: block;
+}
+
+.code-line--indent {
+  padding-left: 20px;
+}
+
+.code-empty {
+  height: 0.5rem;
+}
+
+.code-keyword {
+  color: #d73a49;
+}
+
+/* Red */
+.code-var {
+  color: #005cc5;
+}
+
+/* Blue */
+.code-op {
+  color: #24292e;
+}
+
+.code-brace {
+  color: #24292e;
+}
+
+.code-key {
+  color: #6f42c1;
+}
+
+/* Purple */
+.code-str {
+  color: #032f62;
+  font-weight: 500;
+}
+
+/* Dark Blue */
+.code-bool {
+  color: #d73a49;
+}
+
+.code-fn {
+  color: #6f42c1;
+}
+
+.code-method {
+  color: #005cc5;
+}
 
 /* Floating badges */
 .hero__badge-float {
@@ -178,19 +243,29 @@
   font-size: 0.8rem;
   box-shadow: var(--shadow-card);
 }
+
 .hero__badge-float--1 {
   top: -20px;
   right: -20px;
   animation: float1 4s ease-in-out infinite;
 }
+
 .hero__badge-float--2 {
   bottom: -20px;
   left: -20px;
   animation: float1 4s ease-in-out infinite 2s;
 }
+
 @keyframes float1 {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 /* Scroll hint */
@@ -207,98 +282,203 @@
   font-size: 0.7rem;
   letter-spacing: 0.1em;
 }
+
 .hero__scroll-line {
   width: 1px;
   height: 40px;
   background: linear-gradient(to bottom, transparent, var(--color-accent));
   animation: scroll-line 2s ease-in-out infinite;
 }
+
 @keyframes scroll-line {
-  0%, 100% { opacity: 0.3; transform: scaleY(0.8); }
-  50% { opacity: 1; transform: scaleY(1); }
+
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scaleY(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
 }
 
+/* ── TABLET (≤900px) ──────────────────────────────────*/
 @media (max-width: 900px) {
+  .hero {
+    /* Remove forced 100vh on mobile — let content breathe */
+    min-height: auto;
+    padding-bottom: 20px;
+  }
+
   .hero__inner {
     grid-template-columns: 1fr;
     text-align: center;
-    gap: 40px;
+    gap: 20px;
+    /* Remove min-height — eliminates huge empty space on 344px phones */
+    min-height: auto;
+    padding-top: 16px;
+    padding-bottom: 24px;
   }
+
   .hero__badge,
   .hero__location {
     margin-left: auto;
     margin-right: auto;
   }
-  .hero__tagline { margin-left: auto; margin-right: auto; }
-  .hero__cta { justify-content: center; }
-  .hero__name { 
-    text-align: center; 
-    font-size: 2.5rem; 
+
+  .hero__tagline {
+    margin-left: auto;
+    margin-right: auto;
   }
-  .hero__visual { order: -1; }
-  .code-card { max-width: 380px; margin: 0 auto; }
+
+  .hero__cta {
+    justify-content: center;
+  }
+
+  .hero__name {
+    text-align: center;
+    font-size: 2.2rem;
+  }
+
+  /* Hide the code card on all mobile — it takes too much vertical space */
+  .hero__visual {
+    display: none;
+  }
+
+  /* Hide scroll hint on mobile */
+  .hero__scroll-hint {
+    display: none;
+  }
 }
 
+/* ── SMALL MOBILE (≤640px) ──────────────────────────── */
 @media (max-width: 640px) {
+  .hero {
+    padding-top: 70px;
+    padding-bottom: 12px;
+  }
+
   .hero__inner {
-    gap: 28px;
-    padding-top: 16px;
-    padding-bottom: 36px;
+    gap: 16px;
+    padding-top: 12px;
+    padding-bottom: 16px;
   }
+
   .hero__name {
-    font-size: 2rem;
+    font-size: 1.9rem;
     line-height: 1.15;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
   }
+
   .hero__name-role {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
   }
+
   .hero__tagline {
-    font-size: 0.92rem;
-    padding: 0 4px;
-    margin-bottom: 24px;
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+    padding: 0;
   }
+
   .hero__cta {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    gap: 10px;
-  }
-  .hero__cta > * { width: 100%; max-width: 280px; }
-  .code-card { max-width: 320px; }
-  .code-card__body { padding: 16px 18px; font-size: 0.8rem; }
-  .hero__badge-float { display: none; } /* Hide floating badges on mid-small */
-}
-
-@media (max-width: 480px) {
-  .hero__name { 
-    font-size: 1.75rem;
-    line-height: 1.2;
+    gap: 8px;
     margin-bottom: 14px;
   }
-  .hero__name-role {
-    font-size: 1.1rem;
-  }
-  .hero__tagline {
-    font-size: 0.88rem;
-    padding: 0;
-    margin-bottom: 20px;
-  }
-  .hero__visual { display: none; } /* Hide code card on very small screens */
-  .hero__inner { gap: 0; }
-}
 
-@media (max-width: 360px) {
-  .hero__name {
-    font-size: 1.5rem;
+  .hero__cta>* {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .hero__badge {
     margin-bottom: 12px;
   }
+
+  .hero__location {
+    justify-content: center;
+  }
+}
+
+/* ── NARROW PHONES (≤480px) ─────────────────────────── */
+@media (max-width: 480px) {
+  .hero {
+    padding-top: 62px;
+    padding-bottom: 8px;
+  }
+
+  .hero__inner {
+    gap: 12px;
+    padding-top: 10px;
+    padding-bottom: 12px;
+  }
+
+  .hero__name {
+    font-size: 1.65rem;
+    line-height: 1.18;
+    margin-bottom: 8px;
+    letter-spacing: -0.03em;
+  }
+
   .hero__name-role {
     font-size: 1rem;
   }
-  .hero__badge {
-    font-size: 0.72rem;
-    padding: 6px 10px;
+
+  .hero__tagline {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin-bottom: 14px;
   }
-  .hero__cta > * { max-width: 100%; }
+
+  .hero__badge {
+    font-size: 0.74rem;
+    padding: 6px 12px;
+    margin-bottom: 10px;
+  }
+
+  .hero__cta {
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .hero__cta>* {
+    max-width: 100%;
+  }
+}
+
+/* ── VERY SMALL / GALAXY (≤360px) ───────────────────── */
+@media (max-width: 360px) {
+  .hero {
+    padding-top: 56px;
+    padding-bottom: 6px;
+  }
+
+  .hero__inner {
+    gap: 10px;
+    padding-top: 8px;
+    padding-bottom: 10px;
+  }
+
+  .hero__name {
+    font-size: 1.45rem;
+    margin-bottom: 6px;
+  }
+
+  .hero__name-role {
+    font-size: 0.95rem;
+  }
+
+  .hero__tagline {
+    font-size: 0.82rem;
+    margin-bottom: 12px;
+  }
+
+  .hero__badge {
+    font-size: 0.7rem;
+    padding: 5px 10px;
+  }
 }
