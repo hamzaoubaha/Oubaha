@@ -9,14 +9,16 @@ const AnimatedCounter = ({ value }) => {
   const isInView = useInView(ref, { once: true });
   const [count, setCount] = useState(0);
 
-  const numericValue = parseInt(value.replace(/\D/g, ''), 10);
-  const suffix = value.replace(/[0-9]/g, '');
+  const cleanValue = value ? value.toString() : "";
+  const numericValue = parseInt(cleanValue.replace(/\D/g, ''), 10);
+  const suffix = cleanValue.replace(/[0-9]/g, '');
+  const isNumeric = !isNaN(numericValue) && cleanValue.match(/\d/);
 
   useEffect(() => {
-    if (!isInView) return;
+    if (!isInView || !isNumeric) return;
     let start = 0;
     const duration = 1800;
-    const step = Math.ceil(numericValue / (duration / 16));
+    const step = Math.ceil(numericValue / (duration / 16)) || 1;
     const timer = setInterval(() => {
       start += step;
       if (start >= numericValue) {
@@ -27,8 +29,9 @@ const AnimatedCounter = ({ value }) => {
       }
     }, 16);
     return () => clearInterval(timer);
-  }, [isInView, numericValue]);
+  }, [isInView, numericValue, isNumeric]);
 
+  if (!isNumeric) return <span ref={ref}>{value}</span>;
   return <span ref={ref}>{count}{suffix}</span>;
 };
 

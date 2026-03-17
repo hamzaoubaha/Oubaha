@@ -146,6 +146,12 @@ button {
   width: 100%;
 }
 
+@media (max-width: 768px) {
+  .container {
+    padding: 0 30px; /* Stronger margins on mobile for floating effect */
+  }
+}
+
 @media (min-width: 1400px) {
   .container {
     max-width: 1200px;
@@ -176,9 +182,17 @@ main {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-radius: var(--radius-xl);
-  margin: 0 2%;
+  margin: 0 auto; /* Center it */
   padding: 40px;
   border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 94%; /* Always leave gap on the sides */
+}
+
+@media (max-width: 768px) {
+  .section-glass {
+    padding: 30px 20px;
+    width: 90%; /* Even more gap on mobile */
+  }
 }
 .section--alt {
   background-color: var(--color-bg-secondary);
@@ -276,13 +290,23 @@ main {
 @media (max-width: 768px) {
   :root {
     --section-padding: 64px 0;
-    --container-padding: 0 20px;
+    --container-padding: 0 30px;
   }
-  html { font-size: 15px; }
+  html { font-size: 14px; }
+  h1 { font-size: 2rem !important; }
+  h2 { font-size: 1.6rem !important; }
 }
+
 @media (max-width: 480px) {
   :root {
-    --section-padding: 52px 0;
-    --container-padding: 0 16px;
+    --section-padding: 48px 0;
+    --container-padding: 0 25px; /* Ensure floating effect on small screens */
+  }
+  html { font-size: 13px; }
+  h1 { font-size: 1.8rem !important; }
+  h2 { font-size: 1.4rem !important; }
+  
+  .container {
+    padding: 0 20px; /* Force side margins even on tiny screens */
   }
 }

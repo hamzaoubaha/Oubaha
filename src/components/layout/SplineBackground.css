@@ -18,3 +18,19 @@
   left: 0;
 }
 
+@media (max-width: 768px) {
+  .spline-bg spline-viewer {
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.7); /* Perfect center scaling */
+    transform-origin: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .spline-bg spline-viewer {
+    transform: translate(-50%, -50%) scale(0.55); /* Smaller for narrow phones */
+  }
+}
+

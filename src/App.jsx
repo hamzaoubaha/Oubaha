@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import './index.css';
 
 // Layout
@@ -17,7 +17,7 @@ import ContactPage from './pages/ContactPage';
 
 function App() {
   return (
-    <Router basename="/portfolio-hamza">
+    <Router>
       <ScrollToTop />
       <SplineBackground />
       <Navbar />

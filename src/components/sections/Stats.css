@@ -49,5 +49,12 @@
   .stats__grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 480px) {
+  .stats {
+    padding: 60px 0;
+    margin: 20px 0; /* Add margin to separate from Hero */
+  }
   .stats__grid { grid-template-columns: 1fr; }
+  .stat-card {
+    padding: 30px 20px;
+  }
 }
