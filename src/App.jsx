@@ -17,7 +17,7 @@ import ContactPage from './pages/ContactPage';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/portfolio-hamza">
       <ScrollToTop />
       <SplineBackground />
       <Navbar />

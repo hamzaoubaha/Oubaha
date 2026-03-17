@@ -13,7 +13,7 @@ const CV_FEATURES = [
 ];
 
 const CV = () => {
-  const cvPath = "/hamza_CV.pdf";
+  const cvPath = `${import.meta.env.BASE_URL}hamza_CV.pdf`;
 
   return (
     <section id="cv" className="section cv">
