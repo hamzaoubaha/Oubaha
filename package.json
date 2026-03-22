@@ -6,9 +6,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host",
-    "build": "vite build",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
+    "build": "vite build --outDir dist --base /Oubaha/",
+    "preview": "vite preview --outDir dist --base /Oubaha/",
+    "predeploy": "cross-env VITE_BASE_PATH=/Oubaha/ npm run build",
     "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
