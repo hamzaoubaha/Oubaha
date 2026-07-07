@@ -26,8 +26,7 @@ const SplineBackground = () => {
   return (
     <div className="spline-bg">
       <spline-viewer 
-        url="https://prod.spline.design/eT-FhUCAE2UZWE1b/scene.splinecode" 
-        events-target="global"
+        url="https://prod.spline.design/eT-FhUCAE2UZWE1b/scene.splinecode"
       ></spline-viewer>
     </div>
   );
