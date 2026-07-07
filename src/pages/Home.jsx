@@ -1,5 +1,6 @@
 import Hero from '../components/sections/Hero';
 import About from '../components/sections/About';
+import Testimonials from '../components/sections/Testimonials';
 import Skills from '../components/sections/Skills';
 import Stats from '../components/sections/Stats';
 import CurrentFocus from '../components/sections/CurrentFocus';
@@ -18,6 +19,7 @@ const Home = () => {
       <Stats />
       <Skills />
       <CurrentFocus />
+      <Testimonials />
     </motion.div>
   );
 };

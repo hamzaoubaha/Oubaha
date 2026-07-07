@@ -1,7 +1,37 @@
-.testimonials__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+.testimonials__slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 30px;
+  padding: 10px 0 30px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-accent) transparent;
+}
+.testimonials__slider::-webkit-scrollbar {
+  height: 6px;
+}
+.testimonials__slider::-webkit-scrollbar-track {
+  background: transparent;
+}
+.testimonials__slider::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: var(--radius-full);
+}
+.testimonials__slider .testimonial-card {
+  flex: 0 0 100%;
+  max-width: 380px;
+  scroll-snap-align: center;
+}
+@media (min-width: 768px) {
+  .testimonials__slider .testimonial-card {
+    flex: 0 0 calc(50% - 15px);
+  }
+}
+@media (min-width: 1024px) {
+  .testimonials__slider .testimonial-card {
+    flex: 0 0 calc(33.333% - 20px);
+  }
 }
 .testimonial-card {
   background: var(--color-bg-card);
@@ -63,6 +93,7 @@
   font-weight: 700;
   color: var(--color-accent);
   flex-shrink: 0;
+  text-transform: uppercase;
 }
 .testimonial-card__name {
   font-size: 0.875rem;
@@ -75,9 +106,136 @@
   font-family: var(--font-mono);
 }
 
-@media (max-width: 1024px) {
-  .testimonials__grid { grid-template-columns: 1fr; }
+/* Review Form Styles */
+.testimonial-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
 }
+.btn-leave-review {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--color-accent);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+.btn-leave-review:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -10px var(--color-accent);
+}
+.testimonial-form-container {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  margin-top: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+.testimonial-form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--color-border);
+}
+.testimonial-form-header h3 {
+  color: var(--color-text-primary);
+  font-size: 1.25rem;
+  margin: 0;
+}
+.btn-close-form {
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  display: flex;
+  padding: 4px;
+  transition: color var(--transition-base);
+}
+.btn-close-form:hover {
+  color: var(--color-accent);
+}
+.testimonial-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.form-group label {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+.form-input {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  color: var(--color-text-primary);
+  font-family: inherit;
+  font-size: 0.9rem;
+  transition: border-color var(--transition-base);
+}
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+textarea.form-input {
+  resize: vertical;
+  min-height: 100px;
+}
+.btn-submit-review {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-purple));
+  color: var(--color-bg);
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: opacity var(--transition-base);
+}
+.btn-submit-review:hover:not(:disabled) {
+  opacity: 0.9;
+}
+.btn-submit-review:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.form-message {
+  padding: 12px;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  text-align: center;
+}
+.form-message.success {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+.form-message.error {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
 @media (max-width: 768px) {
-  .testimonials__grid { grid-template-columns: 1fr; }
+  .testimonial-form-container { padding: 20px; }
 }
