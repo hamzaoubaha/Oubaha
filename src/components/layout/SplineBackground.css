@@ -17,8 +17,21 @@
   position: absolute;
   top: -100px;
   left: 0;
-  pointer-events: none; /* Ensure the inner viewer also doesn't capture events */
+  pointer-events: none;
 }
+
+/* Transparent overlay — sits above spline-viewer and blocks its internal
+   scroll/wheel/touch listeners (Shadow DOM ignores CSS pointer-events) */
+.spline-bg__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: transparent;
+  pointer-events: all;
+  touch-action: auto;
+  cursor: default;
+}
+
 
 /* On mobile: hide Spline entirely to avoid it overlapping content */
 @media (max-width: 768px) {
