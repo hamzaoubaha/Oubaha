@@ -15,7 +15,7 @@ I believe in honest progress and the power of practice. Every project I build is
   available: true,
   email: "hamzaa.ooubaha@gmail.com",
   phone: "0657494705",
-  cvUrl: null,
+  cvUrl: "/cv.pdf",
   avatar: null,
   social: {
     github: "https://github.com/hamzaoubaha",

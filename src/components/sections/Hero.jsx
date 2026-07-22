@@ -1,13 +1,22 @@
 import { ArrowRight, Download, Mail, MapPin, Circle } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { personal } from '../../data/portfolio';
 import Button from '../shared/Button';
 import './Hero.css';
 
 const Hero = () => {
+  const navigate = useNavigate();
+
   const handleScroll = (href) => {
     const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      // Fallback if section doesn't exist on home page
+      if (href === '#projects') navigate('/projects');
+      if (href === '#contact') navigate('/contact');
+    }
   };
 
   return (
@@ -63,7 +72,7 @@ const Hero = () => {
               variant="primary"
               size="lg"
               icon={<ArrowRight size={18} />}
-              onClick={() => handleScroll('#projects')}
+              onClick={() => navigate('/projects')}
             >
               View Projects
             </Button>
@@ -72,7 +81,6 @@ const Hero = () => {
               size="lg"
               icon={<Download size={18} />}
               href={personal.cvUrl}
-              download
             >
               Download CV
             </Button>
@@ -80,7 +88,7 @@ const Hero = () => {
               variant="ghost"
               size="lg"
               icon={<Mail size={16} />}
-              onClick={() => handleScroll('#contact')}
+              onClick={() => navigate('/contact')}
             >
               Contact Me
             </Button>
