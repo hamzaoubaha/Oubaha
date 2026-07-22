@@ -72,7 +72,7 @@ export const projects = [
     slug: "portfolio",
     description: "A modern, responsive portfolio built with React to showcase my journey and learning progress.",
     longDescription: "This project was built to practice React components, state management, and modern UI design. It serves as my digital home where I document my growth as a developer.",
-    image: "/projects/portfolio-v1.jpg",
+    image: "/port.png",
     category: "React Projects",
     featured: true,
     technologies: ["React", "Vite", "Framer Motion", "Vanilla CSS"],

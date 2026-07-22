@@ -11,13 +11,17 @@ const ProjectCard = ({ project, variant = 'default' }) => {
     <div className={`project-card project-card--${variant}`}>
       {/* Image / placeholder */}
       <div className="project-card__image">
-        <div className="project-card__image-placeholder">
-          <div className="project-card__image-inner">
-            <span className="project-card__project-initial font-mono">
-              {title.charAt(0)}
-            </span>
+        {project.image ? (
+          <img src={project.image} alt={title} className="project-card__img" />
+        ) : (
+          <div className="project-card__image-placeholder">
+            <div className="project-card__image-inner">
+              <span className="project-card__project-initial font-mono">
+                {title.charAt(0)}
+              </span>
+            </div>
           </div>
-        </div>
+        )}
         <div className="project-card__overlay">
           <div className="project-card__links">
             {liveUrl && (
