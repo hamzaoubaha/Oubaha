@@ -5,14 +5,20 @@ import './ProjectCard.css';
 const tagColors = ['accent', 'emerald', 'purple', 'gold'];
 
 const ProjectCard = ({ project, variant = 'default' }) => {
-  const { title, description, technologies, liveUrl, githubUrl, category, year } = project;
+  const { title, description, technologies, liveUrl, githubUrl, category, year, image } = project;
+
+  // Generate live screenshot from URL using a free service (thum.io)
+  // If no liveUrl is present, fallback to local image, then to letter placeholder
+  const isLiveUrlValid = liveUrl && liveUrl.startsWith('http');
+  const screenshotUrl = isLiveUrlValid ? `https://image.thum.io/get/width/800/crop/800/${liveUrl}` : null;
+  const finalImage = screenshotUrl || image;
 
   return (
     <div className={`project-card project-card--${variant}`}>
       {/* Image / placeholder */}
       <div className="project-card__image">
-        {project.image ? (
-          <img src={project.image} alt={title} className="project-card__img" />
+        {finalImage ? (
+          <img src={finalImage} alt={title} className="project-card__img" />
         ) : (
           <div className="project-card__image-placeholder">
             <div className="project-card__image-inner">

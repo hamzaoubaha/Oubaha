@@ -76,7 +76,7 @@ export const projects = [
     category: "React Projects",
     featured: true,
     technologies: ["React", "Vite", "Framer Motion", "Vanilla CSS"],
-    liveUrl: "#",
+    liveUrl: "https://hamzaoubaha.site",
     githubUrl: "https://github.com/hamzaoubaha/portfolio-hamza",
     year: 2024,
   }
